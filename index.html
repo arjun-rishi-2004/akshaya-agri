@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture E-Commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <h1 class="title">AgriCommerce
+            <div class="aurora">
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+            </div>
+          </h1>        <button onclick="showRegisterModal()">Register</button>
+        <button onclick="showLoginModal()">Login</button>
+    </div>
+
+    <!-- Farmer Home Page -->
+    <div id="farmer-home" style="display:none;">
+        <h2>Welcome, Farmer</h2>
+        <p>Your current balance: <span id="farmer-coins">0</span> coins</p>
+        <button onclick="showProductModal()">Add Product</button>
+        <div id="farmer-products" class="product-list"></div>
+    </div>
+
+    <!-- Consumer Home Page -->
+    <div id="consumer-home" style="display:none;">
+        <h2>Welcome, Consumer</h2>
+        <p>Your current balance: <span id="consumer-coins">0</span> coins</p>
+        <div id="product-list" class="product-list"></div>
+    </div>
+
+    <!-- Modals -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <h3>Register</h3>
+            <input type="text" id="register-username" placeholder="Username">
+            <input type="password" id="register-password" placeholder="Password">
+            <select id="user-role">
+                <option value="consumer">Consumer</option>
+                <option value="farmer">Farmer</option>
+            </select>
+            <button onclick="registerUser()">Register</button>
+            <button onclick="closeModal('register-modal')">Close</button>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h3>Login</h3>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="loginUser()">Login</button>
+            <button onclick="closeModal('login-modal')">Close</button>
+        </div>
+    </div>
+
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add Product</h3>
+            <input type="text" id="product-name" placeholder="Product Name">
+            <input type="number" id="product-price" placeholder="Product Price">
+            <input type="file" id="product-image">
+            <button onclick="addProduct()">Add Product</button>
+            <button onclick="closeModal('add-product-modal')">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
